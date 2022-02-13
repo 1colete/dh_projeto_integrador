@@ -72,3 +72,16 @@ def identify_cols_low_variance(df, low_variance_threshold):
             colunas_baixa_variancia.append(col)
             
     return colunas_baixa_variancia
+
+def checa_nulos(df):
+    '''
+    recebe um dataframe e retorna a porcentagem de nulos em cada uma das colunas
+    '''
+    # Checando colunas com nulos
+    coluna_nulos = pd.Series(df.isnull().sum(), name='nulos')
+
+    coluna_nulosperc = pd.Series(100 * (df.isnull().sum()/ df.shape[0]), name='%')
+
+    df_nulos = pd.merge(coluna_nulos, coluna_nulosperc, right_index = True,
+                left_index = True).round(2)
+    return df_nulos
