@@ -1,4 +1,9 @@
-dados/casos_obitos_doencas_preexistentes.csv
-dados/Codigo_Nome_Municipios.txt
-dados/Sedes_Coordenadas_Municipios.csv
-dados/df_nonan.pkl
+# source files
+dados/raw/casos_obitos_doencas_preexistentes.csv
+
+#cleaned files
+dados/cleaned/df_nonan.pkl
+
+#other
+bibliotecas/__pycache__/
+
