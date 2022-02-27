@@ -1,4 +1,5 @@
 import pandas as pd
+import unidecode
 from sklearn.preprocessing import MinMaxScaler
 
 def linhas_duplicadas(df):
@@ -85,3 +86,14 @@ def checa_nulos(df):
     df_nulos = pd.merge(coluna_nulos, coluna_nulosperc, right_index = True,
                 left_index = True).round(2)
     return df_nulos
+
+
+def corrigir_nomes(nome):
+    """ Remove todos a a acentuação e deixa a string em minúscula
+
+    Args:
+        nome (str): nome que será manipulado
+    """
+
+    nome = unidecode.unidecode(nome).lower()
+    return nome
