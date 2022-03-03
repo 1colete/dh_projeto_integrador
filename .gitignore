@@ -1,9 +1,23 @@
 # source files
 dados/raw/casos_obitos_doencas_preexistentes.csv
-
-#cleaned files
+dados/cleaned/df_preped.pkl
 dados/cleaned/df_nonan.pkl
+dados/cleaned/df_idh.pkl
 
 #other
 bibliotecas/__pycache__/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+__pycache__
+*.py[cod]
+*$py.class
+.ipynb_checkpoints
+.ipynb_checkpoints/
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+.ipynb_checkpoints/
+
 
