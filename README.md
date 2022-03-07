@@ -1,6 +1,6 @@
 <h1 align="center"> Projeto Integrador - Digital House </h1>
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/1colete/download_livros_PasseiDireto/blob/main/LICENSE.md) 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/1colete/dh_projeto_integrador/blob/main/LICENSE.md) 
 
 ## Sobre o Projeto
 
@@ -43,7 +43,7 @@ Siga as seguintes etapas
 
 ## Contribuindo com esse projeto
 
-Para contribuir com **download_livros_PasseiDireto**, siga estas etapas:
+Para contribuir com este projeto, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
