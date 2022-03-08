@@ -3,21 +3,33 @@
 import pandas as pd
 df = pd.read_pickle('dados/cleaned/df_preped.pkl')
 
+
 home_page_text = """
-<div style="text-align: justify"> Diabetes is due to either the pancreas not producing enough insulin, or the cells of the body not responding properly to the insulin produced. There are three main types of diabetes mellitus.
-Type 1 diabetes results from failure of the pancreas to produce enough insulin due to loss of beta cells. This form was previously referred to as "insulin-dependent diabetes mellitus" or "juvenile diabetes". The loss of beta cells is caused by an autoimmune response. The cause of this autoimmune response is unknown.
-Type 2 diabetes begins with insulin resistance, a condition in which cells fail to respond to insulin properly. As the disease progresses, a lack of insulin may also develop. This form was previously referred to as "non insulin-dependent diabetes mellitus" or "adult-onset diabetes". The most common cause is a combination of excessive body weight and insufficient exercise.
-Gestational diabetes is the third main form, and occurs when pregnant women without a previous history of diabetes develop high blood sugar levels (text FROM WIKIPEDIA).
-The aim of this Data App is to predict whether or not the patient has diabetes.</div>
+<div style="text-align: justify"> 
+
+A Covid-19 é uma doença infecciosa causada pelo coronavírus (Sars-CoV-2) e tem como principais sintomas febre, cansaço e tosse seca. Alguns pacientes podem apresentar dores, congestão nasal, dor de cabeça, conjuntivite, dor de garganta, diarreia, perda de paladar ou olfato, erupção cutânea na pele ou descoloração dos dedos das mãos ou dos pés. Esses sintomas geralmente são leves e começam gradualmente. Algumas pessoas são infectadas, mas apresentam apenas sintomas muito leves.
+
+A maioria das pessoas (cerca de 80%) se recupera da doença sem precisar de tratamento hospitalar. Uma em cada seis pessoas infectadas por Covid-19 fica gravemente doente e desenvolve dificuldade de respirar. As pessoas idosas e as que têm outras condições de saúde como pressão alta, problemas cardíacos e do pulmão, diabetes ou câncer, têm maior risco de ficarem gravemente doentes. No entanto, qualquer pessoa pode pegar a Covid-19 e ficar gravemente doente.
+
+O SARS-CoV-2 é um betacoronavírus descoberto em amostras de lavado broncoalveolar obtidas de pacientes com pneumonia de causa desconhecida na cidade de Wuhan, província de Hubei, China, em dezembro de 2019. Pertence ao subgênero Sarbecovírus da família Coronaviridae e é o sétimo coronavírus conhecido a infectar seres humanos.
+
+Os coronavírus são uma grande família de vírus comuns em muitas espécies diferentes de animais, incluindo o homem, camelos, gado, gatos e morcegos. Raramente os coronavírus de animais podem infectar pessoas e depois se espalhar entre seres humanos como já ocorreu com o MERS-CoV e o SARS-CoV-2. Até o momento, não foi definido o reservatório silvestre do SARS-CoV-2.
+
+Fonte: https://www.saude.df.gov.br/coronavirus/
+</div>
 
 """
+
+
 #  SECTION DATA
 
 data_description = """
-<div style = "text-align: justify">O conjunto de dados consiste em algumas condições de saúde preexistentes para determiar o risco de óbito por COVID-19. As variáveis analisadas incluem idade, sexo, cardiopatia, diabetes, doencas neurologicas, obesidade, e outros fatores de risco .</div>
+<div style = "text-align: justify">O conjunto de dados consiste em algumas condições de saúde preexistentes para determiar o risco de óbito por COVID-19. As variáveis analisadas incluem idade, sexo, cardiopatia, diabetes, doencas neurologicas, obesidade, e outros fatores de risco.
+
+Fonte dos dados de contaminação por COVID-19 https://www.seade.gov.br/coronavirus/
+</div>
 <br>
 """
-
 
 age_min_value = int(df['idade'].min())
 age_max_value = int(df['idade'].max())

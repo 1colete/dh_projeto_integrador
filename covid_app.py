@@ -8,7 +8,7 @@ import numpy as np
 #from monitor_for_app import *
 from variables import *
 #from datetime import datetime
-st.set_page_config(page_title = 'COVID-19 Prediction')
+st.set_page_config(page_title = 'COVID-19 Preditor')
 
 @st.cache
 def load_data():
@@ -23,27 +23,27 @@ def load_model(model):
 df = load_data()
 
 def main():
-    options = ['Homepage', 'Data' ,'Make Prediction','About']
-    page_option = st.sidebar.selectbox('Options', options)
+    options = ['Início', 'Dados' ,'Predição','Sobre']
+    page_option = st.sidebar.selectbox('Páginas', options)
     
-    if page_option == 'Homepage':
-        st.title('COVID-19 predictor')
+    if page_option == 'Início':
+        st.title('Previsor COVID-19 ')
         st.markdown(home_page_text, unsafe_allow_html = True)
         
-    elif page_option == 'Data':
-        st.title('More informations about dataset')
+    elif page_option == 'Dados':
+        st.title('Mais informações sobre o conjunto de dados')
         st.markdown(data_description, unsafe_allow_html = True)
 
-        with st.expander('Descriptive statistics', expanded = False):
-            st.write('Here you can get some statistics for all numeric columns.')
+        with st.expander('Estatisticas', expanded = False):
+            st.write('Podemos ver estatisticas para as colunas numéricas.')
             st.write(df.describe())
 
-        with st.expander('Target values'):
-            st.write('We have 35% class 1 observations.')
-            # st.write(round(df.Outcome.value_counts(normalize = True)*100, 2))
-        
-    elif page_option == 'Make Prediction':
-        st.title('Prediction')
+        with st.expander('Valores Targets'):
+            st.write(f'Temos {round(df.obito.value_counts(normalize = True)*100, 2)[1]} % de obtidos na base.')
+            st.write(round(df.obito.value_counts(normalize = True)*100, 2))
+
+    elif page_option == 'Predição':
+        st.title('Predição')
         
         cardiopatia = st.checkbox('cardiopatia')
         diabetes = st.checkbox('diabetes')
@@ -94,7 +94,7 @@ def main():
             st.success(f"Probabilidade de óbito é de {round(prediction_proba[0,1]*100, 2)}%.")
                
     else:
-        st.title('About')
+        st.title('Sobre')
         
         st.text('Projeto desenvolvido por:')
     
