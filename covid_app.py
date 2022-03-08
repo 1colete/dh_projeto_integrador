@@ -1,3 +1,4 @@
+from soupsieve import select
 import streamlit as st
 import joblib
 import os
@@ -52,14 +53,32 @@ def main():
         idade = st.slider('Idade: ', 0, 110, 29)
         cs_sexo = st.selectbox( 'Sexo', 
                 ('Masculino', 'Feminino'))
+        if cs_sexo == 'Masculino':
+            cs_sexo = 1
+        else:
+            cs_sexo = 0 
 
         selected_options = [cardiopatia,diabetes, doenca_neurologica, obesidade, outros_fatores_de_risco , idade , cs_sexo]
         
+        selected_options2 = []
+        for option in selected_options2:
+            if option == True:
+                selected_options2.append(1)
+            if option == False:
+                selected_options2.append(0)
+            else:
+                selected_options2.append(option)
+
         sample_input = np.array(selected_options).reshape(1,-1)
         model = load_model('models/DecisionTreeClassifier.pkl')
 
         # class prediction
         prediction_class = model.predict(sample_input)
+        if prediction_class == 1:
+            prediction_class = 'Obito'
+        else:
+            prediction_class = 'Sobrevive'
+
         # proba prediction
         prediction_proba = model.predict_proba(sample_input)
         if st.button('Submit'):
@@ -70,9 +89,9 @@ def main():
             st.success(f'Outros fatores de Risco: {outros_fatores_de_risco}')
             st.success(f'Idade: {idade}')
             st.success(f'Sexo: {cs_sexo}')
-
-            st.success(f"Result of prediction: {prediction_class[0]}")
-            st.success(f"Probability for class 1 is {round(prediction_proba[0,1]*100, 2)}%.")
+            st.text(' ')
+            st.success(f"Classe da previsão é: {prediction_class}")
+            st.success(f"Probabilidade de óbito é de {round(prediction_proba[0,1]*100, 2)}%.")
                
     else:
         st.title('About')
