@@ -82,16 +82,16 @@ def main():
         # proba prediction
         prediction_proba = model.predict_proba(sample_input)
         if st.button('Submit'):
-            st.success(f'Cardiopatia: {cardiopatia}')
-            st.success(f'Diabetes: {diabetes}')
-            st.success(f'Doenças neurológicas: {doenca_neurologica}')
-            st.success(f'Obesidade: {obesidade}')
-            st.success(f'Outros fatores de Risco: {outros_fatores_de_risco}')
-            st.success(f'Idade: {idade}')
-            st.success(f'Sexo: {cs_sexo}')
-            st.text(' ')
+            # st.success(f'Cardiopatia: {cardiopatia}')
+            # st.success(f'Diabetes: {diabetes}')
+            # st.success(f'Doenças neurológicas: {doenca_neurologica}')
+            # st.success(f'Obesidade: {obesidade}')
+            # st.success(f'Outros fatores de Risco: {outros_fatores_de_risco}')
+            # st.success(f'Idade: {idade}')
+            # st.success(f'Sexo: {cs_sexo}')
+            # st.text(' ')
             st.success(f"Classe da previsão é: {prediction_class}")
-            st.success(f"Probabilidade de óbito é de {round(prediction_proba[0,1]*100, 2)}%.")
+            # st.success(f"Probabilidade de óbito é de {round(prediction_proba[0,1]*100, 2)}%.")
                
     else:
         st.title('Sobre')
@@ -101,7 +101,6 @@ def main():
         st.text('''
         Alexandre Antunes
         Alexandre Colete
-        Antonio Davi Ramos
         Emerson Araujo
         Eduardo Hagiwara
         Vinicio Lima Pedrosa Lins''')
