@@ -19,7 +19,7 @@ def load_data():
     df = pd.read_pickle(dados_path)
     return df
 
-def load_model(model):
+def load_model():
 	# load_model = joblib.load(open(os.path.join(model),"rb"))
     current_path = os.getcwd()
     model_path = os.path.join(current_path, 'models\clf_tuned.pkl')
@@ -68,7 +68,7 @@ def main():
         selected_options = [cardiopatia, diabetes, doenca_neurologica, obesidade, outros_fatores_de_risco , idade , cs_sexo]
 
         sample_input = np.array(selected_options).reshape(1,-1)
-        model = load_model('models/clf_tuned.pkl')
+        model = load_model()
 
         if st.button('Submit'):
             # class prediction
