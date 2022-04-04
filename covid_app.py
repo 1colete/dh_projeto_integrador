@@ -5,7 +5,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import os
-import sklearn
+# import sklearn
 #import sqlite3
 #from monitor_for_app import *
 # from variables import *
