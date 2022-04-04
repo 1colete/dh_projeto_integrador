@@ -1,7 +1,7 @@
 # SECTION HOMEPAGE
 
 import pandas as pd
-df = pd.read_pickle('dados/cleaned/df_preped.pkl')
+# df = pd.read_pickle('dados/cleaned/df_preped.pkl')
 
 
 home_page_text = """
@@ -46,8 +46,8 @@ Fonte dos dados de contaminação por COVID-19 https://www.seade.gov.br/coronavi
 <br>
 """
 
-age_min_value = int(df['idade'].min())
-age_max_value = int(df['idade'].max())
+# age_min_value = int(df['idade'].min())
+# age_max_value = int(df['idade'].max())
 
 # SECTION ABOUT
 about_text = """

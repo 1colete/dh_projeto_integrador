@@ -36,13 +36,13 @@ def main():
         st.title('Mais informações sobre o conjunto de dados')
         st.markdown(data_description, unsafe_allow_html = True)
 
-        with st.expander('Estatisticas', expanded = False):
-            st.write('Podemos ver estatisticas para as colunas numéricas.')
-            st.write(df.describe())
+        # with st.expander('Estatisticas', expanded = False):
+        #     st.write('Podemos ver estatisticas para as colunas numéricas.')
+        #     st.write(df.describe())
 
-        with st.expander('Valores Targets'):
-            st.write(f'Temos {round(df.obito.value_counts(normalize = True)*100, 2)[1]} % de obtidos na base.')
-            st.write(round(df.obito.value_counts(normalize = True)*100, 2))
+        # with st.expander('Valores Targets'):
+        #     st.write(f'Temos {round(df.obito.value_counts(normalize = True)*100, 2)[1]} % de obtidos na base.')
+        #     st.write(round(df.obito.value_counts(normalize = True)*100, 2))
 
     elif page_option == 'Predição':
         st.title('Predição')
