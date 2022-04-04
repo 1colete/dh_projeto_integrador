@@ -23,7 +23,7 @@ category_encoders=2.3.0=pyhd8ed1ab_0
 sqlite=3.37.0=h8ffe710_0
 geobr=0.1.10=pypi_0
 geopandas=0.7.0=pypi_0
-sklearn
+# sklearn
 beautifulsoup4=4.10.0=pypi_0
 urllib3=1.26.8=pyhd8ed1ab_1
 unicodedata2=14.0.0=py310he2412df_0
