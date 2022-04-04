@@ -21,7 +21,7 @@ def load_model(model):
     return load_model
 
 # load data
-df = load_data()
+# df = load_data()
 
 def main():
     options = ['Início', 'Dados' ,'Predição','Sobre']

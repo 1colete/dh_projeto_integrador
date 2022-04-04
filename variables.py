@@ -1,6 +1,6 @@
 # SECTION HOMEPAGE
 
-import pandas as pd
+# import pandas as pd
 # df = pd.read_pickle('dados/cleaned/df_preped.pkl')
 
 
