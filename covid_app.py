@@ -1,6 +1,7 @@
 from soupsieve import select
 import streamlit as st
-import joblib
+# import joblib
+import pickle
 import os
 import pandas as pd
 import numpy as np
@@ -16,8 +17,9 @@ def load_data():
     return df
 
 def load_model(model):
-	load_model = joblib.load(open(os.path.join(model),"rb"))
-	return load_model
+	# load_model = joblib.load(open(os.path.join(model),"rb"))
+    load_model = pickle.load(open(f'models/clf_tuned.pkl', 'rb'))
+    return load_model
 
 # load data
 df = load_data()
