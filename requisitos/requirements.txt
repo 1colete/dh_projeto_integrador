@@ -238,3 +238,4 @@ zeromq=4.3.4=h0e60522_1
 zipp=3.7.0=pypi_0
 zlib=1.2.11=h8ffe710_1013
 zstd=1.5.2=h6255e5f_0
+sklearn
