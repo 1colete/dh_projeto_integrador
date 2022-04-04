@@ -4,6 +4,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+import os
 # import sklearn
 #import sqlite3
 #from monitor_for_app import *
@@ -13,12 +14,16 @@ st.set_page_config(page_title = 'Previsor de COVID-19')
 
 @st.cache
 def load_data():
-    df = pd.read_pickle('dados/cleaned/df_preped.pkl')
+    current_path = os.getcwd()
+    dados_path = os.path.join(current_path, 'dados\cleaned\df_preped.pkl')
+    df = pd.read_pickle(dados_path)
     return df
 
 def load_model(model):
 	# load_model = joblib.load(open(os.path.join(model),"rb"))
-    load_model = pickle.load(open(f'models/clf_tuned.pkl', 'rb'))
+    current_path = os.getcwd()
+    model_path = os.path.join(current_path, 'models\clf_tuned.pkl')
+    load_model = pickle.load(open(model_path, 'rb'))
     return load_model
 
 # load data
