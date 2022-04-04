@@ -8,7 +8,7 @@ import numpy as np
 #from monitor_for_app import *
 from variables import *
 #from datetime import datetime
-st.set_page_config(page_title = 'COVID-19 Preditor')
+st.set_page_config(page_title = 'Previsor de COVID-19')
 
 @st.cache
 def load_data():
@@ -54,56 +54,28 @@ def main():
         cs_sexo = st.selectbox( 'Sexo', 
                 ('Masculino', 'Feminino'))
         if cs_sexo == 'Masculino':
-            cs_sexo = 1
+            cs_sexo = True
         else:
-            cs_sexo = 0 
+            cs_sexo = False
 
-        selected_options = [cardiopatia,diabetes, doenca_neurologica, obesidade, outros_fatores_de_risco , idade , cs_sexo]
-        
-        selected_options2 = []
-        for option in selected_options2:
-            if option == True:
-                selected_options2.append(1)
-            if option == False:
-                selected_options2.append(0)
-            else:
-                selected_options2.append(option)
+        selected_options = [cardiopatia, diabetes, doenca_neurologica, obesidade, outros_fatores_de_risco , idade , cs_sexo]
 
         sample_input = np.array(selected_options).reshape(1,-1)
-        model = load_model('models/DecisionTreeClassifier.pkl')
+        model = load_model('models/clf_tuned.pkl')
 
-        # class prediction
-        prediction_class = model.predict(sample_input)
-        if prediction_class == 1:
-            prediction_class = 'Obito'
-        else:
-            prediction_class = 'Sobrevive'
-
-        # proba prediction
-        prediction_proba = model.predict_proba(sample_input)
         if st.button('Submit'):
-            # st.success(f'Cardiopatia: {cardiopatia}')
-            # st.success(f'Diabetes: {diabetes}')
-            # st.success(f'Doenças neurológicas: {doenca_neurologica}')
-            # st.success(f'Obesidade: {obesidade}')
-            # st.success(f'Outros fatores de Risco: {outros_fatores_de_risco}')
-            # st.success(f'Idade: {idade}')
-            # st.success(f'Sexo: {cs_sexo}')
-            # st.text(' ')
-            st.success(f"Classe da previsão é: {prediction_class}")
-            # st.success(f"Probabilidade de óbito é de {round(prediction_proba[0,1]*100, 2)}%.")
+            # class prediction
+            prediction_class = model.predict(sample_input)
+            if prediction_class == 1:
+                prediction_class = 'ALTO RISCO'
+            else:
+                prediction_class = 'BAIXO RISCO'
+
+            st.success(f"Paciente com {prediction_class} de obito")
                
     else:
         st.title('Sobre')
-        
-        st.text('Projeto desenvolvido por:')
-    
-        st.text('''
-        Alexandre Antunes
-        Alexandre Colete
-        Emerson Araujo
-        Eduardo Hagiwara
-        Vinicio Lima Pedrosa Lins''')
+        st.markdown(about_text, unsafe_allow_html = True)
         
     
 main()
