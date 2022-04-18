@@ -1,6 +1,6 @@
 <h1 align="center"> Projeto Integrador - Digital House </h1>
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/1colete/dh_projeto_integrador/blob/main/LICENSE.md) 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/1colete/dh_projeto_integrador/blob/main/LICENSE.md) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/1colete/app_covid/main/covid_app.py)
 
 ## Sobre o Projeto
 
